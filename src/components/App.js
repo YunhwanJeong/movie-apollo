@@ -4,7 +4,7 @@ import { ApolloProvider } from '@apollo/client';
 
 import Home from '../routes/Home';
 import Detail from '../routes/Detail';
-import { client } from '../index';
+import client from '../graphql/apollo';
 
 function App() {
   return (
