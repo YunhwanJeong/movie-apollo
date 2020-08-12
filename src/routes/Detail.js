@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Detail() {
+function Detail(props) {
+    console.log("detail props:", props);
     return (
         <h1>Detail</h1>
     )
