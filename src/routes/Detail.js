@@ -82,7 +82,6 @@ function Detail(props) {
             id: parseInt(id)
         }
     });
-    
     return (
         <StyledContainer>
             <StyledContainer__Contents>
@@ -90,7 +89,7 @@ function Detail(props) {
                 ? <Loading path={path}/> 
                 : <StyledContainer__ContentsWrapper>
                     <StyledHeading>
-                        <StyledHeader>{data?.movie.title}</StyledHeader>
+                    <StyledHeader>{data?.movie.title}{data?.movie.isLiked ? "💖" : "🤍"}</StyledHeader>
                         <StyledSpecification>
                             <StyledRating>{data?.movie.rating}⭐</StyledRating>
                             <StyledYear>{data?.movie.year}</StyledYear>

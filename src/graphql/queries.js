@@ -4,7 +4,8 @@ export const GET_MOVIES = gql`
     query movies {
         movies {
             id,
-            poster
+            poster,
+            isLiked @client
         }
     }
 `
@@ -17,8 +18,15 @@ export const GET_MOVIE = gql`
             year,
             genres,
             rating,
+            description,
             poster,
-            description
+            isLiked @client
         }
     }
 `
+
+export const LIKE_MOVIE = gql`
+    mutation likeMovie($id: Int!) {
+        likeMovie(id: $id) @client
+    }
+`;

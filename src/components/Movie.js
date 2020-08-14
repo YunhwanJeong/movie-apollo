@@ -2,9 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+import Like from '../components/Like';
+
 const Container = styled.div`
     width: 200px;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
 `;
 const Poster = styled.img`
     display: block;
@@ -13,13 +18,15 @@ const Poster = styled.img`
     border-radius: 5px;
 `;
 
-function Movie ({ id, poster }) {
+function Movie (props) {
+    const { id, poster, isLiked } = props;
     return (
-        <Link to={`/${id}`}>
-            <Container id={id}>
+        <Container id={id}>
+            <Link to={`/${id}`}>
                 <Poster src={poster}/>
-            </Container>
-        </Link>
+            </Link>
+            <Like {...props} />
+        </Container>
     )
 }
 
